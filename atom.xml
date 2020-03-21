@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-03-21T03:47:20.618Z</updated>
+    <updated>2020-03-21T03:47:45.112Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -130,8 +130,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Gridea 相关]]></title>
-        <id>https://mr926.me/post/about-Gridea/</id>
-        <link href="https://mr926.me/post/about-Gridea/">
+        <id>https://mr926.me/post/gridea/</id>
+        <link href="https://mr926.me/post/gridea/">
         </link>
         <updated>2019-11-15T02:49:13.000Z</updated>
         <content type="html"><![CDATA[<h1 id="软件">软件</h1>
@@ -196,11 +196,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4013089"><label class="task-list-item-label" for="task-item-4013089"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7477355"><label class="task-list-item-label" for="task-item-7477355"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-741636"><label class="task-list-item-label" for="task-item-741636"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6149601"><label class="task-list-item-label" for="task-item-6149601"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6805202"><label class="task-list-item-label" for="task-item-6805202"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1631336"><label class="task-list-item-label" for="task-item-1631336"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2328301"><label class="task-list-item-label" for="task-item-2328301"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3925750"><label class="task-list-item-label" for="task-item-3925750"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5901937"><label class="task-list-item-label" for="task-item-5901937"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1977933"><label class="task-list-item-label" for="task-item-1977933"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
