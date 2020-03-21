@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://mr926.me</id>
+    <title>mR.926</title>
+    <updated>2020-03-21T03:42:48.143Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://mr926.me"/>
+    <link rel="self" href="https://mr926.me/atom.xml"/>
+    <subtitle>no zuo no die</subtitle>
+    <logo>https://mr926.me/images/avatar.png</logo>
+    <icon>https://mr926.me/favicon.ico</icon>
+    <rights>All rights reserved 2020, mR.926</rights>
+    <entry>
+        <title type="html"><![CDATA[全国省市县区行政区划CAD - 方案区位分析底图 （ArcGIS改投影坐标系）]]></title>
+        <id>https://mr926.me/post/quweifenxi-cad/</id>
+        <link href="https://mr926.me/post/quweifenxi-cad/">
+        </link>
+        <updated>2020-03-19T06:38:22.000Z</updated>
+        <content type="html"><![CDATA[<p>最近在写几个可研文本，项目分别在不同的乡镇，都需要做一个简单的区位分析图。搜索了网上类似的工具，能解决最基本的需求（<a href="https://wis-ai.com/cities">微思区位分析 - 在线生成</a>），也支持一定程度上的自定义，一般的需求可以使用。</p>
+<pre><code>区位分析工具（WIS WHERE）可帮助您快速的掌握某地的地理、生态、交通、经济、上位等方面的区位信息。
+</code></pre>
+<p>这次做的几张图是这样最简单的，但是有省-市-县-镇几个层次的区位图：</p>
+<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200320224606.jpg" alt="区位分析" loading="lazy"></figure>
+<p>原先制做这种图是拿地图来描，一张两张的也不麻烦。这次有好几个地块的情况下，顺便考虑着以后也能方便用，就决定做一套全国详细到镇的区块图，一劳永逸😐。</p>
+<h1 id="arcgis-修改投影坐标">ArcGIS 修改投影坐标</h1>
+<h2 id="shp文件获取">SHP文件获取</h2>
+<p>在网上搜索了下，并没有做好的区划图cad文件，只有一些shp格式（ArcGIS的一种矢量图文件格式），经过一番筛选拼接，一套完整的全国区划图就有了：</p>
+<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200321103221.jpg" alt="ArcGIS" loading="lazy"></figure>
+<p>emmmmm，🤣，这个地图怎么是扁的呢？ 一通搜索猛如虎，原来是坐标系的问题，</p>
+<h2 id="arcgis-修改投影坐标系-导出cad">ArcGIS 修改投影坐标系 导出CAD</h2>
+<h3 id="我国三大坐标系的区别西安80-北京54-wgs-84">我国三大坐标系的区别（西安80、北京54、WGS-84）</h3>
+<h4 id="1-北京54坐标系bjz54">1. 北京54坐标系(BJZ54)</h4>
+<p>北京54坐标系为参心大地坐标系，大地上的一点可用经度L54、纬度M54和大地高H54定位，它是以克拉索夫斯基椭球为基础，经局部平差后产生的坐标系。</p>
+<h4 id="2-西安80坐标系">2. 西安80坐标系</h4>
+<p>1978年4月在西安召开全国天文大地网平差会议，确定重新定位，建立我国新的坐标系。为此有了1980年国家大地坐标系。1980年国家大地坐标系采用地球椭球基本参数为1975年国际大地测量与地球物理联合会第十六届大会推荐的数据，即IAG 75地球椭球体。该坐标系的大地原点设在我国中部的陕西省泾阳县永乐镇，位于西安市西北方向约60公里，故称1980年西安坐标系，又简称西安大地原点。基准面采用青岛大港验潮站1952－1979年确定的黄海平均海水面（即1985国家高程基准）。</p>
+<h4 id="3-wgs-84坐标系">3. WGS－84坐标系</h4>
+<p>WGS－84坐标系（World Geodetic System）是一种国际上采用的地心坐标系。坐标原点为地球质心，其地心空间直角坐标系的Z轴指向国际时间局（BIH）1984.0定义的协议地极（CTP）方向，X轴指向BIH1984.0的协议子午面和CTP赤道的交点，Y轴与Z轴、X轴垂直构成右手坐标系，称为1984年世界大地坐标系。这是一个国际协议地球参考系统（ITRS），是目前国际上统一采用的大地坐标系。GPS广播星历是以WGS-84坐标系为根据的。</p>
+<h3 id="查看原图坐标系">查看原图坐标系</h3>
+<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200321105843.jpg" alt="" loading="lazy"></figure>
+<p>在原图shp文件上右键，属性查看</p>
+<figure data-type="image" tabindex="4"><img src="http://qiniu.mr926.me/img/20200321105915.jpg" alt="" loading="lazy"></figure>
+<p>可以看到原地图的坐标系是WGS-84，而我们一般使用的是北京54坐标系。</p>
+<h3 id="修改坐标系">修改坐标系</h3>
+<figure data-type="image" tabindex="5"><img src="http://qiniu.mr926.me/img/20200321110137.jpg" alt="" loading="lazy"></figure>
+<p>在图层组的位置右键-属性</p>
+<figure data-type="image" tabindex="6"><img src="http://qiniu.mr926.me/img/20200321110154.jpg" alt="" loading="lazy"></figure>
+<p>在<code>坐标系</code>标签栏下，找到<code>投影坐标系</code>-<code>Gauss Kruger</code>-<code>Beijing 1954</code>-<code>Beijing 1954 3 Degree GK CM 108E</code></p>
+<p><img src="http://qiniu.mr926.me/img/20200321110419.jpg" alt="" loading="lazy"><br>
+完成！</p>
+<h3 id="导出cad">导出CAD</h3>
+<figure data-type="image" tabindex="7"><img src="http://qiniu.mr926.me/img/20200321110508.jpg" alt="" loading="lazy"></figure>
+<p>在工具条找到<code>转为CAD</code>-<code>要素转CAD</code></p>
+<figure data-type="image" tabindex="8"><img src="http://qiniu.mr926.me/img/20200321110555.jpg" alt="" loading="lazy"></figure>
+<p>选择需要导出的要素，在<code>环境</code>中，设置输出坐标系：<code>Beijing 1954 3 Degree GK CM 108E</code></p>
+<h1 id="四级行政区划cad下载">四级行政区划CAD下载</h1>
+<figure data-type="image" tabindex="9"><img src="http://qiniu.mr926.me/img/20200321113342.jpg" alt="四级行政区划CAD下载" loading="lazy"></figure>
+<p>省域、市域、县域、镇域四个等级分了不同图层，方便使用</p>
+<p>下载地址：<br>
+<a href="https://www.jianguoyun.com/p/DdLHHW8Qo4ykBhjGqPoC">坚果云下载</a> - (访问密码 : 4ixptm)</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[DEM地形图（tif）获取与处理（转DWG）]]></title>
+        <id>https://mr926.me/post/di-xing-tu-huo-qu-yu-chu-li/</id>
+        <link href="https://mr926.me/post/di-xing-tu-huo-qu-yu-chu-li/">
+        </link>
+        <updated>2020-01-14T02:48:06.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="地形图获取">地形图获取</h1>
+<p>待更新</p>
+<h1 id="地形图处理高程文件转cad">地形图处理（高程文件转CAD）</h1>
+<p>使用 <strong>Global Mapper</strong>打开tif格式的DEM文件。</p>
+<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200114112727.jpg" alt="Global Mapper 软件界面" loading="lazy"></figure>
+<p>⚙️工具——配置——投影<br>
+<img src="http://qiniu.mr926.me/img/20200114105843.png" alt="投影配置" loading="lazy"></p>
+<p><strong>投影</strong>选项选择 <strong>Gauss Krueger (6 degree zones)</strong></p>
+<p><strong>带号</strong>选项，按照项目所在位置的<strong>经度</strong>选择（<a href="http://www.gpsspg.com/maps.htm">查询连接</a>）</p>
+<p>⚙️分析——生成等高线（从高程地形数据）</p>
+<p><img src="http://qiniu.mr926.me/img/20200114114148.png" alt="等高线设置" loading="lazy"><br>
+根据需要，调整等高线间距</p>
+<p><img src="http://qiniu.mr926.me/img/20200114114254.png" alt="简化" loading="lazy"><br>
+根据需要，调整等高线简化</p>
+<p><img src="http://qiniu.mr926.me/img/20200114114351.png" alt="等高线边界" loading="lazy"><br>
+如果要生成整块用地的等高线，选择<strong>全部加载文件</strong>，生成局部等高线，可以框选范围</p>
+<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200114114651.jpg" alt="框选范围" loading="lazy"></figure>
+<p>生成结果：<br>
+<img src="http://qiniu.mr926.me/img/20200114115957.jpg" alt="生成等高线" loading="lazy"></p>
+<p>⚙️文件——输出——输出矢量/激光雷达模式<br>
+<img src="http://qiniu.mr926.me/img/20200114120435.jpg" alt="设置导出格式" loading="lazy"></p>
+<p>选择<strong>DWG</strong></p>
+<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200114145514.jpg" alt="导出选项" loading="lazy"></figure>
+<p><strong>确定</strong>，保存即可。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[篱笆]]></title>
+        <id>https://mr926.me/post/li-ba/</id>
+        <link href="https://mr926.me/post/li-ba/">
+        </link>
+        <updated>2020-01-04T02:50:32.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="服务器列表">服务器列表</h1>
+<p>v1.lab.ooo</p>
+<h1 id="购买管理">购买&amp;管理</h1>
+<h2 id="威劈欸似">威劈欸似</h2>
+<p>https://www.qexw.com/</p>
+<p>2@q  156   10k  M10</p>
+<p>v1.lab.ooo 43.250.105.9</p>
+<h2 id="鸡场">鸡场</h2>
+<p>http://stc-hk.com/</p>
+<p>https://www.v2aky.com/#/dashboard</p>
+<h1 id="安装">安装</h1>
+<p><code>github.com/wulabing/V2Ray_ws-tls_bash_onekey</code></p>
+<p>Linux重装系统：</p>
+<p><code>wget --no-check-certificate https://cloud.golby.cc/Shell/InstallNET.sh &amp;&amp; chmod a+x InstallNET.sh</code><br>
+乌班图18.04：</p>
+<p><code>bash InstallNET.sh -u 18.04 -v 64 -a</code><br>
+默认root密码：</p>
+<p><code>MoeClub.org</code></p>
+<p>一键bbrplus：</p>
+<p><code>wget &quot;https://github.com/chiakge/Linux-NetSpeed/raw/master/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code></p>
+<p>一键v2：</p>
+<p><code>bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Pix4d mapper 航拍生成三维地形模型]]></title>
+        <id>https://mr926.me/post/pix4d-shi-yong/</id>
+        <link href="https://mr926.me/post/pix4d-shi-yong/">
+        </link>
+        <updated>2019-11-20T02:54:12.000Z</updated>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Gridea 相关]]></title>
+        <id>https://mr926.me/post/about-Gridea/</id>
+        <link href="https://mr926.me/post/about-Gridea/">
+        </link>
+        <updated>2019-11-15T02:49:13.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="软件">软件</h1>
+<p><strong>windows</strong></p>
+<p>MD编辑： Typora  https://www.typora.io/#windows</p>
+<p>图床：PicGo  https://github.com/Molunerfinn/PicGo/releases</p>
+<p>Git： https://tortoisegit.org/download/</p>
+<p><strong>MacOS</strong></p>
+<p>MWeb</p>
+<h1 id="hexo相关代码">Hexo相关代码</h1>
+<pre><code>cd ~/hexo/hexocontent/
+sudo hexo clean
+sudo hexo g -d
+
+</code></pre>
+<p>其他相关命令</p>
+<pre><code>sudo hexo new
+</code></pre>
+<p>Pull文件</p>
+<pre><code>cd ~/hexo/hexocontent/source
+sudo git pull
+
+</code></pre>
+<p>Push文件</p>
+<pre><code>cd ~/hexo/hexocontent/source
+sudo git status 
+sudo git add -A
+sudo git commit -a -m&quot;push source&quot;
+sudo git push
+
+</code></pre>
+<h1 id="git相关代码">Git相关代码</h1>
+<p>保存密码<br>
+<code>git config --global credential.helper store</code></p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[楼梯大样Gh]]></title>
+        <id>https://mr926.me/post/xt-stairs/</id>
+        <link href="https://mr926.me/post/xt-stairs/">
+        </link>
+        <updated>2019-06-06T10:39:30.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="使用步骤">使用步骤</h1>
+<ol>
+<li>在excel里填写每个梯段的高度，踏步数量，并检查踏高是否满足规范</li>
+<li>最下面一跑若没有被剖切，第一列踏高数据填写0（踏步数量为非0随意数字）</li>
+<li>在rhino-gh中导入Excel表</li>
+<li>修改各项数据（在gh文件最左侧）</li>
+<li>生成 Ctrl+E 最后一列</li>
+<li>检查是否撞头（框选gh右侧检查组内的内容）</li>
+<li>另存为cad文件</li>
+<li>打开cad，转换图层</li>
+</ol>
+<h1 id="版本功能">版本功能</h1>
+<p><strong>20191115 - 0.5</strong></p>
+<p>解决梯梁与楼梯板剖切线的bug<br>
+增加简单栏杆扶手</p>
+<p>M+-*/10</p>
+<p><strong>20190710 - 0.2</strong></p>
+<p>修改bug</p>
+<p><strong>20190607 - 0.1 Beta</strong></p>
+<p>双跑楼梯剖面图</p>
+<h1 id="待增功能">待增功能</h1>
+<ul class="contains-task-list">
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2589607"><label class="task-list-item-label" for="task-item-2589607"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8251361"><label class="task-list-item-label" for="task-item-8251361"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7996728"><label class="task-list-item-label" for="task-item-7996728"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7308551"><label class="task-list-item-label" for="task-item-7308551"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1461308"><label class="task-list-item-label" for="task-item-1461308"> 栏杆扶手</label></li>
+</ul>
+<h1 id="软件插件安装">软件&amp;插件安装</h1>
+<p><strong>Rhinoceros 6.7</strong></p>
+<pre><code>OD/软件/Installer/Rhinoceros/rhino_en-us_6.7.18199.22081.zip
+安装时可以选择语言
+
+</code></pre>
+<p><strong>读取Excel - Lunchbox</strong></p>
+<pre><code>OD/软件/Installer/Rhinoceros/插件/lunchbox.installer.application
+</code></pre>
+<p><strong>Gh文件</strong></p>
+<pre><code>OD/资料/施工图相关/楼梯
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[摄影后期]]></title>
+        <id>https://mr926.me/post/bridge-cameraray/</id>
+        <link href="https://mr926.me/post/bridge-cameraray/">
+        </link>
+        <updated>2019-01-25T02:43:34.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="筛图修图顺序">筛图修图顺序</h1>
+<h2 id="bridge基本操作">Bridge基本操作</h2>
+<ul>
+<li>全屏预览：Space</li>
+<li>鼠标点击：放大 缩小</li>
+<li>图片对比：Ctrl+B （例选模式） 左右选择，下取消选择</li>
+<li>小键盘，1-0 标记</li>
+<li>打组：Crtl+G</li>
+<li>打开Camera Raw：Ctrl+R（可以多选打开）</li>
+<li>双击图片，用photoshop打开</li>
+</ul>
+<h2 id="camera-raw修图过程">Camera Raw修图过程</h2>
+<ol>
+<li>调整白平衡（灰卡）</li>
+<li>黑白场  （alt键）</li>
+<li>适当的饱和度（饱和度：全；自然饱和度：似有似无的颜色提亮）</li>
+<li>直方图丰富合理的层次</li>
+</ol>
+<h1 id="相关文件">相关文件</h1>
+<p>摄影构图学（高清）</p>
+<p>https://drive.google.com/open?id=1jC4gJ2OW-D2Fnyau9oalsv4N1wutcfHv</p>
+<h1 id="摄影网站">摄影网站</h1>
+<p>日本 hiroshi sugimoto<br>
+https://www.sugimotohiroshi.com/</p>
+<p>德国 Matthias Heiderich<br>
+http://www.matthias-heiderich.de/</p>
+]]></content>
+    </entry>
+</feed>
