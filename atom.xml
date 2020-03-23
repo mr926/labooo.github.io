@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-03-23T03:35:37.916Z</updated>
+    <updated>2020-03-23T07:32:21.517Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -67,14 +67,23 @@
         <updated>2020-01-14T02:48:06.000Z</updated>
         <content type="html"><![CDATA[<h1 id="dem地形图获取">DEM地形图获取</h1>
 <h2 id="通过地图软件下载">通过地图软件下载</h2>
+<p>许多卫星地图下载软件都能下载高程数据，数据源是google地形，精度很低（90米），大范围的规划项目可以用。我现在用的是<code>图新地球</code><a href="http://www.locaspace.cn/">官方网站</a>，大部分功能是免费的，能下载拼接卫星图、街道图……</p>
+<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200323152018.jpg" alt="下载地形1" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200323152030.jpg" alt="下载地形2" loading="lazy"></figure>
 <h2 id="pix4dmapper-导出">Pix4Dmapper 导出</h2>
+<p>用Pix4Dmapper拼接的地形文件也可以导出DEM地形图，精度和拍摄有关，不过受地块内树木的影响（树木也算作地形了🤣），高程信息不是很准。<br>
+<a href="/post/pix4d-shi-yong">Pix4Dmapper简单入手</a></p>
+<p>DEM地形图文件位置：</p>
+<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200323153047.jpg" alt="Pix4Dmapper导出TIF" loading="lazy"></figure>
 <h1 id="地形图处理高程文件转cad">地形图处理（高程文件转CAD）</h1>
 <p>使用 <strong>Global Mapper</strong>（<a href="https://www.jianguoyun.com/p/DSEWdWsQtpiXCBj91fsC">坚果云下载V17</a>(访问密码 : uvwy4f)）打开tif格式的DEM文件。</p>
-<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200114112727.jpg" alt="Global Mapper 软件界面" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="http://qiniu.mr926.me/img/20200114112727.jpg" alt="Global Mapper 软件界面" loading="lazy"></figure>
+<h2 id="设置投影">设置投影</h2>
 <p>⚙️工具——配置——投影<br>
 <img src="http://qiniu.mr926.me/img/20200114105843.png" alt="投影配置" loading="lazy"></p>
 <p><strong>投影</strong>选项选择 <strong>Gauss Krueger (6 degree zones)</strong></p>
 <p><strong>带号</strong>选项，按照项目所在位置的<strong>经度</strong>选择（<a href="http://www.gpsspg.com/maps.htm">查询连接</a>）</p>
+<p>##生成等高线</p>
 <p>⚙️分析——生成等高线（从高程地形数据）</p>
 <p><img src="http://qiniu.mr926.me/img/20200114114148.png" alt="等高线设置" loading="lazy"><br>
 根据需要，调整等高线间距</p>
@@ -82,13 +91,14 @@
 根据需要，调整等高线简化</p>
 <p><img src="http://qiniu.mr926.me/img/20200114114351.png" alt="等高线边界" loading="lazy"><br>
 如果要生成整块用地的等高线，选择<strong>全部加载文件</strong>，生成局部等高线，可以框选范围</p>
-<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200114114651.jpg" alt="框选范围" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://qiniu.mr926.me/img/20200114114651.jpg" alt="框选范围" loading="lazy"></figure>
 <p>生成结果：<br>
 <img src="http://qiniu.mr926.me/img/20200114115957.jpg" alt="生成等高线" loading="lazy"></p>
-<p>⚙️文件——输出——输出矢量/激光雷达模式<br>
+<p>##导出CAD<br>
+⚙️文件——输出——输出矢量/激光雷达模式<br>
 <img src="http://qiniu.mr926.me/img/20200114120435.jpg" alt="设置导出格式" loading="lazy"></p>
 <p>选择<strong>DWG</strong></p>
-<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200114145514.jpg" alt="导出选项" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="http://qiniu.mr926.me/img/20200114145514.jpg" alt="导出选项" loading="lazy"></figure>
 <p><strong>确定</strong>，保存即可。</p>
 ]]></content>
     </entry>
@@ -183,11 +193,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1370663"><label class="task-list-item-label" for="task-item-1370663"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5655159"><label class="task-list-item-label" for="task-item-5655159"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3794278"><label class="task-list-item-label" for="task-item-3794278"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5169145"><label class="task-list-item-label" for="task-item-5169145"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-259191"><label class="task-list-item-label" for="task-item-259191"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-227588"><label class="task-list-item-label" for="task-item-227588"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2898472"><label class="task-list-item-label" for="task-item-2898472"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5827101"><label class="task-list-item-label" for="task-item-5827101"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5113392"><label class="task-list-item-label" for="task-item-5113392"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3091060"><label class="task-list-item-label" for="task-item-3091060"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>

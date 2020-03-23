@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>DEM地形图（tif）获取与处理（转DWG） | mR.926</title>
-<link rel="shortcut icon" href="https://mr926.me/favicon.ico?v=1584934534839">
+<link rel="shortcut icon" href="https://mr926.me/favicon.ico?v=1584948738484">
 <link href="https://cdn.remixicon.com/releases/v2.1.0/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://mr926.me/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="DEM地形图（tif）获取与处理（转DWG） | mR.926 - Atom Feed" href="https://mr926.me/atom.xml">
@@ -13,13 +13,10 @@
 
     <meta name="description" content="DEM地形图获取
 通过地图软件下载
-Pix4Dmapper 导出
-地形图处理（高程文件转CAD）
-使用 Global Mapper（坚果云下载V17(访问密码 : uvwy4f)）打开tif格式的DEM文件。
+许多卫星地图下载软件都能下载高程数据，数据源是google地形，精度很低（90米），大范围的规划项目可以用。我现在用的是图新地球官方网站，大部分功能是免费的，能下载拼接卫星图、街道图……
 
-⚙️工具——配置——投影
 
-..." />
+Pix4Dm..." />
     <meta name="keywords" content="地形,DEM,DWG,软件" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -29,7 +26,7 @@ Pix4Dmapper 导出
       <div class="main-content">
         <div class="site-header">
   <a href="https://mr926.me">
-  <img class="avatar" src="https://mr926.me/images/avatar.png?v=1584934534839" alt="">
+  <img class="avatar" src="https://mr926.me/images/avatar.png?v=1584948738484" alt="">
   </a>
   <h1 class="site-title">
     mR.926
@@ -119,7 +116,7 @@ Pix4Dmapper 导出
                 2020-01-14
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
                 <a href="https://mr926.me/tag/KSMEceDc2/" class="post-tag">
@@ -146,14 +143,23 @@ Pix4Dmapper 导出
               <div class="post-content">
                 <h1 id="dem地形图获取">DEM地形图获取</h1>
 <h2 id="通过地图软件下载">通过地图软件下载</h2>
+<p>许多卫星地图下载软件都能下载高程数据，数据源是google地形，精度很低（90米），大范围的规划项目可以用。我现在用的是<code>图新地球</code><a href="http://www.locaspace.cn/">官方网站</a>，大部分功能是免费的，能下载拼接卫星图、街道图……</p>
+<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200323152018.jpg" alt="下载地形1" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200323152030.jpg" alt="下载地形2" loading="lazy"></figure>
 <h2 id="pix4dmapper-导出">Pix4Dmapper 导出</h2>
+<p>用Pix4Dmapper拼接的地形文件也可以导出DEM地形图，精度和拍摄有关，不过受地块内树木的影响（树木也算作地形了🤣），高程信息不是很准。<br>
+<a href="/post/pix4d-shi-yong">Pix4Dmapper简单入手</a></p>
+<p>DEM地形图文件位置：</p>
+<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200323153047.jpg" alt="Pix4Dmapper导出TIF" loading="lazy"></figure>
 <h1 id="地形图处理高程文件转cad">地形图处理（高程文件转CAD）</h1>
 <p>使用 <strong>Global Mapper</strong>（<a href="https://www.jianguoyun.com/p/DSEWdWsQtpiXCBj91fsC">坚果云下载V17</a>(访问密码 : uvwy4f)）打开tif格式的DEM文件。</p>
-<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200114112727.jpg" alt="Global Mapper 软件界面" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="http://qiniu.mr926.me/img/20200114112727.jpg" alt="Global Mapper 软件界面" loading="lazy"></figure>
+<h2 id="设置投影">设置投影</h2>
 <p>⚙️工具——配置——投影<br>
 <img src="http://qiniu.mr926.me/img/20200114105843.png" alt="投影配置" loading="lazy"></p>
 <p><strong>投影</strong>选项选择 <strong>Gauss Krueger (6 degree zones)</strong></p>
 <p><strong>带号</strong>选项，按照项目所在位置的<strong>经度</strong>选择（<a href="http://www.gpsspg.com/maps.htm">查询连接</a>）</p>
+<p>##生成等高线</p>
 <p>⚙️分析——生成等高线（从高程地形数据）</p>
 <p><img src="http://qiniu.mr926.me/img/20200114114148.png" alt="等高线设置" loading="lazy"><br>
 根据需要，调整等高线间距</p>
@@ -161,13 +167,14 @@ Pix4Dmapper 导出
 根据需要，调整等高线简化</p>
 <p><img src="http://qiniu.mr926.me/img/20200114114351.png" alt="等高线边界" loading="lazy"><br>
 如果要生成整块用地的等高线，选择<strong>全部加载文件</strong>，生成局部等高线，可以框选范围</p>
-<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200114114651.jpg" alt="框选范围" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="http://qiniu.mr926.me/img/20200114114651.jpg" alt="框选范围" loading="lazy"></figure>
 <p>生成结果：<br>
 <img src="http://qiniu.mr926.me/img/20200114115957.jpg" alt="生成等高线" loading="lazy"></p>
-<p>⚙️文件——输出——输出矢量/激光雷达模式<br>
+<p>##导出CAD<br>
+⚙️文件——输出——输出矢量/激光雷达模式<br>
 <img src="http://qiniu.mr926.me/img/20200114120435.jpg" alt="设置导出格式" loading="lazy"></p>
 <p>选择<strong>DWG</strong></p>
-<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200114145514.jpg" alt="导出选项" loading="lazy"></figure>
+<figure data-type="image" tabindex="6"><img src="http://qiniu.mr926.me/img/20200114145514.jpg" alt="导出选项" loading="lazy"></figure>
 <p><strong>确定</strong>，保存即可。</p>
 
               </div>
@@ -179,7 +186,11 @@ Pix4Dmapper 导出
 <li><a href="#pix4dmapper-%E5%AF%BC%E5%87%BA">Pix4Dmapper 导出</a></li>
 </ul>
 </li>
-<li><a href="#%E5%9C%B0%E5%BD%A2%E5%9B%BE%E5%A4%84%E7%90%86%E9%AB%98%E7%A8%8B%E6%96%87%E4%BB%B6%E8%BD%ACcad">地形图处理（高程文件转CAD）</a></li>
+<li><a href="#%E5%9C%B0%E5%BD%A2%E5%9B%BE%E5%A4%84%E7%90%86%E9%AB%98%E7%A8%8B%E6%96%87%E4%BB%B6%E8%BD%ACcad">地形图处理（高程文件转CAD）</a>
+<ul>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%8A%95%E5%BD%B1">设置投影</a></li>
+</ul>
+</li>
 </ul>
 
               </div>
