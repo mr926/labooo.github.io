@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-03-23T02:15:22.389Z</updated>
+    <updated>2020-03-23T02:28:02.915Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -65,10 +65,11 @@
         <link href="https://mr926.me/post/di-xing-tu-huo-qu-yu-chu-li/">
         </link>
         <updated>2020-01-14T02:48:06.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="地形图获取">地形图获取</h1>
-<p>待更新</p>
+        <content type="html"><![CDATA[<h1 id="dem地形图获取">DEM地形图获取</h1>
+<h2 id="通过地图软件下载">通过地图软件下载</h2>
+<h2 id="pix4dmapper-导出">Pix4Dmapper 导出</h2>
 <h1 id="地形图处理高程文件转cad">地形图处理（高程文件转CAD）</h1>
-<p>使用 <strong>Global Mapper</strong>打开tif格式的DEM文件。</p>
+<p>使用 <strong>Global Mapper</strong>（<a href="https://www.jianguoyun.com/p/DSEWdWsQtpiXCBj91fsC">坚果云下载V17</a>(访问密码 : uvwy4f)）打开tif格式的DEM文件。</p>
 <figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200114112727.jpg" alt="Global Mapper 软件界面" loading="lazy"></figure>
 <p>⚙️工具——配置——投影<br>
 <img src="http://qiniu.mr926.me/img/20200114105843.png" alt="投影配置" loading="lazy"></p>
@@ -189,11 +190,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4140307"><label class="task-list-item-label" for="task-item-4140307"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8750032"><label class="task-list-item-label" for="task-item-8750032"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5103256"><label class="task-list-item-label" for="task-item-5103256"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9933914"><label class="task-list-item-label" for="task-item-9933914"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8786543"><label class="task-list-item-label" for="task-item-8786543"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4751910"><label class="task-list-item-label" for="task-item-4751910"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8064406"><label class="task-list-item-label" for="task-item-8064406"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4057267"><label class="task-list-item-label" for="task-item-4057267"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5462298"><label class="task-list-item-label" for="task-item-5462298"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7607097"><label class="task-list-item-label" for="task-item-7607097"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
