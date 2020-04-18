@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-03-23T16:10:49.638Z</updated>
+    <updated>2020-04-18T11:53:53.962Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -81,8 +81,8 @@
 <h2 id="设置投影">设置投影</h2>
 <p>⚙️工具——配置——投影<br>
 <img src="http://qiniu.mr926.me/img/20200114105843.png" alt="投影配置" loading="lazy"></p>
-<p><strong>投影</strong>选项选择 <strong>Gauss Krueger (6 degree zones)</strong></p>
-<p><strong>带号</strong>选项，按照项目所在位置的<strong>经度</strong>选择（<a href="http://www.gpsspg.com/maps.htm">查询连接</a>）</p>
+<p><strong>投影</strong>选项，选择 <strong>Gauss Krueger (6 degree zones)</strong></p>
+<p><strong>带号</strong>选项，选择<strong>Zone 19 （108E-114E)</strong></p>
 <h2 id="生成等高线">生成等高线</h2>
 <p>⚙️分析——生成等高线（从高程地形数据）</p>
 <p><img src="http://qiniu.mr926.me/img/20200114114148.png" alt="等高线设置" loading="lazy"><br>
@@ -193,11 +193,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4201820"><label class="task-list-item-label" for="task-item-4201820"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9695591"><label class="task-list-item-label" for="task-item-9695591"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7387178"><label class="task-list-item-label" for="task-item-7387178"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4270430"><label class="task-list-item-label" for="task-item-4270430"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4847232"><label class="task-list-item-label" for="task-item-4847232"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5437421"><label class="task-list-item-label" for="task-item-5437421"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8953553"><label class="task-list-item-label" for="task-item-8953553"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-355389"><label class="task-list-item-label" for="task-item-355389"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1297639"><label class="task-list-item-label" for="task-item-1297639"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1790919"><label class="task-list-item-label" for="task-item-1790919"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
