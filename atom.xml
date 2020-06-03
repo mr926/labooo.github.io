@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-05-22T00:55:22.846Z</updated>
+    <updated>2020-06-03T03:22:30.409Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -10,6 +10,31 @@
     <logo>https://mr926.me/images/avatar.png</logo>
     <icon>https://mr926.me/favicon.ico</icon>
     <rights>All rights reserved 2020, mR.926</rights>
+    <entry>
+        <title type="html"><![CDATA[世纪互联OneDrive容量改为5T]]></title>
+        <id>https://mr926.me/post/shi-ji-hu-lian-onedrive-rong-liang-gai-wei-5t/</id>
+        <link href="https://mr926.me/post/shi-ji-hu-lian-onedrive-rong-liang-gai-wei-5t/">
+        </link>
+        <updated>2020-06-03T03:18:27.000Z</updated>
+        <content type="html"><![CDATA[<p>首先按照文档中的内容，下载sharepoint online 的模块</p>
+<p>https://www.microsoft.com/zh-cn/download/details.aspx?id=35588</p>
+<p>安装完后后，打开“SharePoint Online Management Shell”，进入PowerShell操作:<br>
+如果你OneDrive的url为https://orgname-my.sharepoint.cn，则你的组织名称为orgname</p>
+<pre><code>$adminUPN=&quot;管理员邮箱&quot;
+$orgName=&quot;组织名称&quot;
+Connect-SPOService -url https://$orgName-admin.sharepoint.cn -Credential $adminUPN
+</code></pre>
+<p>输入命令后，在弹出的界面输入密码</p>
+<p>设置默认容量为5T</p>
+<pre><code>Set-SPOTenant -OneDriveStorageQuota 5242880
+</code></pre>
+<p>修改指定用户的Onedrive为5T</p>
+<pre><code>$userUPN=&quot;指定用户邮箱&quot;
+$user=$userUPN -replace &quot;[^a-z0-9]&quot;,&quot;_&quot;
+Set-SPOSite -Identity https://$orgName-my.sharepoint.cn/personal/$user -StorageQuota 5242880
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[全国省市县区行政区划CAD - 方案区位分析底图 （ArcGIS改投影坐标系）]]></title>
         <id>https://mr926.me/post/quweifenxi-cad/</id>
@@ -193,11 +218,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-541510"><label class="task-list-item-label" for="task-item-541510"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1417291"><label class="task-list-item-label" for="task-item-1417291"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7319456"><label class="task-list-item-label" for="task-item-7319456"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6166214"><label class="task-list-item-label" for="task-item-6166214"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-3651424"><label class="task-list-item-label" for="task-item-3651424"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4675406"><label class="task-list-item-label" for="task-item-4675406"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-4082902"><label class="task-list-item-label" for="task-item-4082902"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7389286"><label class="task-list-item-label" for="task-item-7389286"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3544494"><label class="task-list-item-label" for="task-item-3544494"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7144499"><label class="task-list-item-label" for="task-item-7144499"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
