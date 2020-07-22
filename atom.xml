@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-07-20T06:53:08.898Z</updated>
+    <updated>2020-07-22T06:36:59.010Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -43,7 +43,8 @@ Set-SPOSite -Identity https://$orgName-my.sharepoint.cn/personal/$user -StorageQ
         <updated>2020-03-19T06:38:22.000Z</updated>
         <content type="html"><![CDATA[<p>相关网站：<br>
 <a href="https://wis-ai.com/cities">微思区位分析 - 在线生成</a>，支持一定程度上的自定义，一般的需求可以使用。<br>
-<a href="http://datav.aliyun.com/tools/atlas/#&amp;lat=31.769817845138945&amp;lng=104.29901249999999&amp;zoom=4">地图生成器</a></p>
+<a href="http://datav.aliyun.com/tools/atlas/#&amp;lat=31.769817845138945&amp;lng=104.29901249999999&amp;zoom=4">地图生成器</a><br>
+<a href="http://www.guihuayun.com">规划云</a> DIY地图</p>
 <pre><code>区位分析工具（WIS WHERE）可帮助您快速的掌握某地的地理、生态、交通、经济、上位等方面的区位信息。
 </code></pre>
 <p>这次做的几张图是这样最简单的，但是有省-市-县-镇几个层次的区位图：</p>
@@ -220,11 +221,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-9040128"><label class="task-list-item-label" for="task-item-9040128"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1746435"><label class="task-list-item-label" for="task-item-1746435"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6933935"><label class="task-list-item-label" for="task-item-6933935"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-86577"><label class="task-list-item-label" for="task-item-86577"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2253400"><label class="task-list-item-label" for="task-item-2253400"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-6088941"><label class="task-list-item-label" for="task-item-6088941"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-7242789"><label class="task-list-item-label" for="task-item-7242789"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1332757"><label class="task-list-item-label" for="task-item-1332757"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3344117"><label class="task-list-item-label" for="task-item-3344117"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-4159808"><label class="task-list-item-label" for="task-item-4159808"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
