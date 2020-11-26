@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2020-11-26T06:19:24.489Z</updated>
+    <updated>2020-11-26T07:16:01.320Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -221,11 +221,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8954891"><label class="task-list-item-label" for="task-item-8954891"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1549485"><label class="task-list-item-label" for="task-item-1549485"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8330179"><label class="task-list-item-label" for="task-item-8330179"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9943195"><label class="task-list-item-label" for="task-item-9943195"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7172134"><label class="task-list-item-label" for="task-item-7172134"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5449979"><label class="task-list-item-label" for="task-item-5449979"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2618385"><label class="task-list-item-label" for="task-item-2618385"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-3758472"><label class="task-list-item-label" for="task-item-3758472"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2380715"><label class="task-list-item-label" for="task-item-2380715"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5692528"><label class="task-list-item-label" for="task-item-5692528"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
