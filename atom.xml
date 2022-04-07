@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>mR.926</title>
-    <updated>2021-01-07T03:48:27.057Z</updated>
+    <updated>2022-04-07T05:15:18.501Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
     <subtitle>no zuo no die</subtitle>
     <logo>https://mr926.me/images/avatar.png</logo>
     <icon>https://mr926.me/favicon.ico</icon>
-    <rights>All rights reserved 2021, mR.926</rights>
+    <rights>All rights reserved 2022, mR.926</rights>
     <entry>
         <title type="html"><![CDATA[世纪互联OneDrive容量改为5T]]></title>
         <id>https://mr926.me/post/shi-ji-hu-lian-onedrive-rong-liang-gai-wei-5t/</id>
@@ -33,58 +33,6 @@ Connect-SPOService -url https://$orgName-admin.sharepoint.cn -Credential $adminU
 $user=$userUPN -replace &quot;[^a-z0-9]&quot;,&quot;_&quot;
 Set-SPOSite -Identity https://$orgName-my.sharepoint.cn/personal/$user -StorageQuota 5242880
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[全国省市县区行政区划CAD - 方案区位分析底图 （ArcGIS改投影坐标系）]]></title>
-        <id>https://mr926.me/post/quweifenxi-cad/</id>
-        <link href="https://mr926.me/post/quweifenxi-cad/">
-        </link>
-        <updated>2020-03-19T06:38:22.000Z</updated>
-        <content type="html"><![CDATA[<p>相关网站：<br>
-<a href="https://wis-ai.com/cities">微思区位分析 - 在线生成</a>，支持一定程度上的自定义，一般的需求可以使用。<br>
-<a href="http://datav.aliyun.com/tools/atlas/#&amp;lat=31.769817845138945&amp;lng=104.29901249999999&amp;zoom=4">地图生成器</a><br>
-<a href="http://www.guihuayun.com">规划云</a> DIY地图</p>
-<pre><code>区位分析工具（WIS WHERE）可帮助您快速的掌握某地的地理、生态、交通、经济、上位等方面的区位信息。
-</code></pre>
-<p>这次做的几张图是这样最简单的，但是有省-市-县-镇几个层次的区位图：</p>
-<figure data-type="image" tabindex="1"><img src="http://qiniu.mr926.me/img/20200323113509.jpg" alt="区位分析" loading="lazy"></figure>
-<p>原先制做这种图是拿地图来描，一张两张的也不麻烦。这次有好几个地块的情况下，顺便考虑着以后也能方便用，就决定做一套全国详细到镇的区块图，一劳永逸😐。</p>
-<h1 id="arcgis-修改投影坐标">ArcGIS 修改投影坐标</h1>
-<h2 id="shp文件获取">SHP文件获取</h2>
-<p>在网上搜索了下，并没有做好的区划图cad文件，只有一些shp格式（ArcGIS的一种矢量图文件格式），经过一番筛选拼接，一套完整的全国区划图就有了：</p>
-<figure data-type="image" tabindex="2"><img src="http://qiniu.mr926.me/img/20200321103221.jpg" alt="ArcGIS" loading="lazy"></figure>
-<p>emmmmm，🤣，这个地图怎么是扁的呢？ 一通搜索猛如虎，原来是坐标系的问题，</p>
-<h2 id="arcgis-修改投影坐标系-导出cad">ArcGIS 修改投影坐标系 导出CAD</h2>
-<h3 id="我国三大坐标系的区别西安80-北京54-wgs-84">我国三大坐标系的区别（西安80、北京54、WGS-84）</h3>
-<h4 id="1-北京54坐标系bjz54">1. 北京54坐标系(BJZ54)</h4>
-<p>北京54坐标系为参心大地坐标系，大地上的一点可用经度L54、纬度M54和大地高H54定位，它是以克拉索夫斯基椭球为基础，经局部平差后产生的坐标系。</p>
-<h4 id="2-西安80坐标系">2. 西安80坐标系</h4>
-<p>1978年4月在西安召开全国天文大地网平差会议，确定重新定位，建立我国新的坐标系。为此有了1980年国家大地坐标系。1980年国家大地坐标系采用地球椭球基本参数为1975年国际大地测量与地球物理联合会第十六届大会推荐的数据，即IAG 75地球椭球体。该坐标系的大地原点设在我国中部的陕西省泾阳县永乐镇，位于西安市西北方向约60公里，故称1980年西安坐标系，又简称西安大地原点。基准面采用青岛大港验潮站1952－1979年确定的黄海平均海水面（即1985国家高程基准）。</p>
-<h4 id="3-wgs-84坐标系">3. WGS－84坐标系</h4>
-<p>WGS－84坐标系（World Geodetic System）是一种国际上采用的地心坐标系。坐标原点为地球质心，其地心空间直角坐标系的Z轴指向国际时间局（BIH）1984.0定义的协议地极（CTP）方向，X轴指向BIH1984.0的协议子午面和CTP赤道的交点，Y轴与Z轴、X轴垂直构成右手坐标系，称为1984年世界大地坐标系。这是一个国际协议地球参考系统（ITRS），是目前国际上统一采用的大地坐标系。GPS广播星历是以WGS-84坐标系为根据的。</p>
-<h3 id="查看原图坐标系">查看原图坐标系</h3>
-<figure data-type="image" tabindex="3"><img src="http://qiniu.mr926.me/img/20200321105843.jpg" alt="" loading="lazy"></figure>
-<p>在原图shp文件上右键，属性查看</p>
-<figure data-type="image" tabindex="4"><img src="http://qiniu.mr926.me/img/20200321105915.jpg" alt="" loading="lazy"></figure>
-<p>可以看到原地图的坐标系是WGS-84，而我们一般使用的是北京54坐标系。</p>
-<h3 id="修改坐标系">修改坐标系</h3>
-<figure data-type="image" tabindex="5"><img src="http://qiniu.mr926.me/img/20200321110137.jpg" alt="" loading="lazy"></figure>
-<p>在图层组的位置右键-属性</p>
-<figure data-type="image" tabindex="6"><img src="http://qiniu.mr926.me/img/20200321110154.jpg" alt="" loading="lazy"></figure>
-<p>在<code>坐标系</code>标签栏下，找到<code>投影坐标系</code>-<code>Gauss Kruger</code>-<code>Beijing 1954</code>-<code>Beijing 1954 3 Degree GK CM 108E</code></p>
-<p><img src="http://qiniu.mr926.me/img/20200321110419.jpg" alt="" loading="lazy"><br>
-完成！</p>
-<h3 id="导出cad">导出CAD</h3>
-<figure data-type="image" tabindex="7"><img src="http://qiniu.mr926.me/img/20200321110508.jpg" alt="" loading="lazy"></figure>
-<p>在工具条找到<code>转为CAD</code>-<code>要素转CAD</code></p>
-<figure data-type="image" tabindex="8"><img src="http://qiniu.mr926.me/img/20200321110555.jpg" alt="" loading="lazy"></figure>
-<p>选择需要导出的要素，在<code>环境</code>中，设置输出坐标系：<code>Beijing 1954 3 Degree GK CM 108E</code></p>
-<h1 id="四级行政区划cad下载">四级行政区划CAD下载</h1>
-<figure data-type="image" tabindex="9"><img src="http://qiniu.mr926.me/img/20200321113342.jpg" alt="四级行政区划CAD下载" loading="lazy"></figure>
-<p>省域、市域、县域、镇域四个等级分了不同图层，方便使用</p>
-<p>下载地址：<br>
-<a href="https://www.jianguoyun.com/p/DaYV6VcQmbeeCBikwvwC">坚果云下载</a> - (访问密码 : gb15d1)</p>
 ]]></content>
     </entry>
     <entry>
@@ -221,11 +169,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5889688"><label class="task-list-item-label" for="task-item-5889688"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-9978043"><label class="task-list-item-label" for="task-item-9978043"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8452535"><label class="task-list-item-label" for="task-item-8452535"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-199070"><label class="task-list-item-label" for="task-item-199070"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-7604920"><label class="task-list-item-label" for="task-item-7604920"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-1853407"><label class="task-list-item-label" for="task-item-1853407"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6456506"><label class="task-list-item-label" for="task-item-6456506"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1907969"><label class="task-list-item-label" for="task-item-1907969"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-8680568"><label class="task-list-item-label" for="task-item-8680568"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8154818"><label class="task-list-item-label" for="task-item-8154818"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
