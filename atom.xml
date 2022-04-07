@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://mr926.me</id>
     <title>文档收藏</title>
-    <updated>2022-04-07T05:26:29.743Z</updated>
+    <updated>2022-04-07T05:27:17.904Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://mr926.me"/>
     <link rel="self" href="https://mr926.me/atom.xml"/>
@@ -79,29 +79,6 @@ Set-SPOSite -Identity https://$orgName-my.sharepoint.cn/personal/$user -StorageQ
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[篱笆]]></title>
-        <id>https://mr926.me/post/li-ba/</id>
-        <link href="https://mr926.me/post/li-ba/">
-        </link>
-        <updated>2020-01-04T02:50:32.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="鸡场">鸡场</h1>
-<p>http://stc-hk.com/</p>
-<p>https://www.v2aky.com/#/dashboard</p>
-<h1 id="安装">安装</h1>
-<p><code>github.com/wulabing/V2Ray_ws-tls_bash_onekey</code></p>
-<p>Linux重装系统：</p>
-<p><code>wget --no-check-certificate https://cloud.golby.cc/Shell/InstallNET.sh &amp;&amp; chmod a+x InstallNET.sh</code><br>
-乌班图18.04：</p>
-<p><code>bash InstallNET.sh -u 18.04 -v 64 -a</code><br>
-默认root密码：</p>
-<p><code>MoeClub.org</code></p>
-<p>一键bbrplus：</p>
-<p><code>wget &quot;https://github.com/chiakge/Linux-NetSpeed/raw/master/tcp.sh&quot; &amp;&amp; chmod +x tcp.sh &amp;&amp; ./tcp.sh</code></p>
-<p>一键v2：</p>
-<p><code>bash &lt;(curl -L -s https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh) | tee v2ray_ins.log</code></p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Gridea 相关]]></title>
         <id>https://mr926.me/post/gridea/</id>
         <link href="https://mr926.me/post/gridea/">
@@ -169,11 +146,11 @@ sudo git push
 <p>双跑楼梯剖面图</p>
 <h1 id="待增功能">待增功能</h1>
 <ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-556882"><label class="task-list-item-label" for="task-item-556882"> 楼梯梁</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-1384610"><label class="task-list-item-label" for="task-item-1384610"> 剪刀楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-5121305"><label class="task-list-item-label" for="task-item-5121305"> 复杂楼梯</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-6037512"><label class="task-list-item-label" for="task-item-6037512"> 楼梯梯步对齐</label></li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-8750247"><label class="task-list-item-label" for="task-item-8750247"> 栏杆扶手</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-2737552"><label class="task-list-item-label" for="task-item-2737552"> 楼梯梁</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-745050"><label class="task-list-item-label" for="task-item-745050"> 剪刀楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-319079"><label class="task-list-item-label" for="task-item-319079"> 复杂楼梯</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" disabled="" type="checkbox" id="task-item-2209191"><label class="task-list-item-label" for="task-item-2209191"> 楼梯梯步对齐</label></li>
+<li class="task-list-item"><input class="task-list-item-checkbox" checked="" disabled="" type="checkbox" id="task-item-5227533"><label class="task-list-item-label" for="task-item-5227533"> 栏杆扶手</label></li>
 </ul>
 <h1 id="软件插件安装">软件&amp;插件安装</h1>
 <p><strong>Rhinoceros 6.7</strong></p>
